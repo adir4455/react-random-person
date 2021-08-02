@@ -58,10 +58,6 @@ function App() {
     if (newValue) {
       setTitle(newValue);
       setValue(person[newValue]);
-    } else {
-      const { name } = person;
-      setTitle("name");
-      setValue(name);
     }
   };
 
@@ -97,6 +93,8 @@ function App() {
               className="icon"
               data-label="password"
               onClick={handleValue}
+
+              //noob
             >
               <FaLock />
             </button>
