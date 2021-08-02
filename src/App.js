@@ -61,6 +61,36 @@ function App() {
     }
   };
 
+  const phone = () => {
+    const { phone } = person;
+    setTitle("phone");
+    setValue(phone);
+  };
+
+  const name = () => {
+    const { name } = person;
+    setTitle("name");
+    setValue(name);
+  };
+
+  const email = () => {
+    const { email } = person;
+    setTitle("email");
+    setValue(email);
+  };
+
+  const age = () => {
+    const { age } = person;
+    setTitle("age");
+    setValue(age);
+  };
+
+  const street = () => {
+    const { street } = person;
+    setTitle("street");
+    setValue(street);
+  };
+
   return (
     <main>
       <div className="block bcg-black"></div>
@@ -75,19 +105,19 @@ function App() {
           <p className="user-value">{value}</p>
           <div className="values-list">
             <button className="icon" data-label="name" onClick={handleValue}>
-              <FaUser />
+              <FaUser onClick={name} />
             </button>
             <button className="icon" data-label="email" onClick={handleValue}>
-              <FaEnvelopeOpen />
+              <FaEnvelopeOpen onClick={email} />
             </button>
             <button className="icon" data-label="age" onClick={handleValue}>
-              <FaCalendarTimes />
+              <FaCalendarTimes onClick={age} />
             </button>
             <button className="icon" data-label="street" onClick={handleValue}>
-              <FaMap />
+              <FaMap onClick={street} />
             </button>
             <button className="icon" data-label="phone" onClick={handleValue}>
-              <FaPhone />
+              <FaPhone onClick={phone} />
             </button>
             <button
               className="icon"
