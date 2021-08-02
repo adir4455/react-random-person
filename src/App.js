@@ -49,12 +49,22 @@ function App() {
   }, []);
 
   const handleValue = (e) => {
-    if (e.target.classList.contains("icon")) {
-      const newValue = e.target.dataset.label;
+    // if (e.target.classList.contains("icon")) {
+    //   const newValue = e.target.dataset.label;
+    //   setTitle(newValue);
+    //   setValue(person[newValue]);
+    // }
+    const newValue = e.target.dataset.label;
+    if (newValue) {
       setTitle(newValue);
       setValue(person[newValue]);
+    } else {
+      const { name } = person;
+      setTitle("name");
+      setValue(name);
     }
   };
+
   return (
     <main>
       <div className="block bcg-black"></div>
@@ -68,41 +78,25 @@ function App() {
           <p className="user-title">my {title} is</p>
           <p className="user-value">{value}</p>
           <div className="values-list">
-            <button
-              className="icon"
-              data-label="name"
-              onMouseOver={handleValue}
-            >
+            <button className="icon" data-label="name" onClick={handleValue}>
               <FaUser />
             </button>
-            <button
-              className="icon"
-              data-label="email"
-              onMouseOver={handleValue}
-            >
+            <button className="icon" data-label="email" onClick={handleValue}>
               <FaEnvelopeOpen />
             </button>
-            <button className="icon" data-label="age" onMouseOver={handleValue}>
+            <button className="icon" data-label="age" onClick={handleValue}>
               <FaCalendarTimes />
             </button>
-            <button
-              className="icon"
-              data-label="street"
-              onMouseOver={handleValue}
-            >
+            <button className="icon" data-label="street" onClick={handleValue}>
               <FaMap />
             </button>
-            <button
-              className="icon"
-              data-label="phone"
-              onMouseOver={handleValue}
-            >
+            <button className="icon" data-label="phone" onClick={handleValue}>
               <FaPhone />
             </button>
             <button
               className="icon"
               data-label="password"
-              onMouseOver={handleValue}
+              onClick={handleValue}
             >
               <FaLock />
             </button>
