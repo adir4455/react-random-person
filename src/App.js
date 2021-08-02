@@ -91,6 +91,12 @@ function App() {
     setValue(street);
   };
 
+  const password = () => {
+    const { password } = person;
+    setTitle("password");
+    setValue(password);
+  };
+
   return (
     <main>
       <div className="block bcg-black"></div>
@@ -123,10 +129,8 @@ function App() {
               className="icon"
               data-label="password"
               onClick={handleValue}
-
-              //noob
             >
-              <FaLock />
+              <FaLock onClick={password} />
             </button>
           </div>
           <button className="btn" type="button" onClick={getPerson}>
